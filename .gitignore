@@ -1,0 +1,12 @@
+# build 
+./build
+
+# general editor cache / config file
+.vscode
+
+*.user
+
+
+# generated translation files
+
+*.qm
