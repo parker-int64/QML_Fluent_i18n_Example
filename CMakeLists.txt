@@ -26,6 +26,7 @@ set(QML_FILES   qml/App.qml
                 qml/components/Sidebar.qml
                 qml/components/MainEvent.qml)
 
+
 qt_add_executable(appFluentExample
     src/main.cpp
 )
@@ -41,7 +42,8 @@ qt_add_qml_module(appFluentExample
 # compiled into the source file
 # access translation files via `:/i18n`
 qt_add_translations(appFluentExample
-                    TS_FILES ${TS_FILES})
+                    TS_FILES ${TS_FILES}
+)
 
 # images
 qt_add_resources(appFluentExample "images"
