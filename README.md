@@ -27,6 +27,6 @@ Based on Documentation on Qt:
 # UI Library: FluentUI
 
 
-Check here for SOME awesome Fluent designs for QML!
+🔥Check here for SOME awesome Fluent designs for QML!🔥
 
 [FluentUI](https://github.com/zhuzichu520/FluentUI)
