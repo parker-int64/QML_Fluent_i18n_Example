@@ -10,17 +10,18 @@ FluObject{
 
     FluPaneItemSeparator{}
     FluPaneItem{
-        title:lang.about
+        title: qsTr("About")
         icon:FluentIcons.Contact
         tapFunc:function(){
             FluApp.navigate("/about")
         }
     }
+
     FluPaneItem{
-        title:lang.settings
+        title: qsTr("Settings")
         icon:FluentIcons.Settings
         onTap:{
-            navigationView.push("qrc:/qml/page/T_Settings.qml")
+            FluApp.navigate("/about")
         }
     }
 }

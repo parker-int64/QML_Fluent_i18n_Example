@@ -12,7 +12,8 @@ Window {
         FluTheme.frameless = ("windows" === Qt.platform.os)
         FluTheme.darkMode = FluDarkMode.System
         FluApp.routes = {
-             "/":"qrc:/FluentExample/qml/window/MainWindow.qml"
+             "/":"qrc:/FluentExample/qml/window/MainWindow.qml",
+            "/about": "qrc:/FluentExample/qml/window/About.qml"
         }
         FluApp.initialRoute = "/"
         FluApp.run()

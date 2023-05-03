@@ -22,9 +22,12 @@ file(GLOB FONT_FILES "${CMAKE_CURRENT_SOURCE_DIR}/res/fonts/*")
 # !WARNING: Do not add ${CMAKE_CURRENT_SOURCE_DIR} in set function
 set(QML_FILES   qml/App.qml
                 qml/window/MainWindow.qml
+                qml/window/About.qml
                 qml/components/Footer.qml
                 qml/components/Sidebar.qml
-                qml/components/MainEvent.qml)
+                qml/components/MainEvent.qml
+                qml/views/V_Home.qml
+            )
 
 
 qt_add_executable(appFluentExample
@@ -59,7 +62,13 @@ qt_add_resources(appFluentExample "fonts"
 # program icons 
 qt_add_resources(appFluentExample "icons"
                 PREFIX "/icons"
+                BASE "res/icons"
                 FILES ${ICON_FILES})
+
+# QML Dir
+#qt_add_resources(appFluentExample "qmldir"
+#            PREFIX "/qmldir"
+#            FILES qml/components/qmldir)
 
 
 target_link_libraries(appFluentExample

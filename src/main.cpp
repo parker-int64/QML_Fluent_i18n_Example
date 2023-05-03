@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
     QCoreApplication::installTranslator(&translator);
 
 
+
     const QUrl url(u"qrc:/FluentExample/qml/App.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
         &app, [url](QObject *obj, const QUrl &objUrl) {
