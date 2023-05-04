@@ -4,6 +4,7 @@ import QtQuick
 import FluentUI
 
 FluObject{
+
     id:footer_items
 
     property var navigationView
@@ -21,7 +22,7 @@ FluObject{
         title: qsTr("Settings")
         icon:FluentIcons.Settings
         onTap:{
-            FluApp.navigate("/about")
+            navigationView.push("/FluentExample/qml/views/V_Settings.qml")
         }
     }
 }
