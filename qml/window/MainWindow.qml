@@ -4,7 +4,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Qt.labs.platform
 import FluentUI
-import "../components"
+import FluentExample
 
 FluWindow {
 
@@ -73,17 +73,16 @@ FluWindow {
     }
 
 
-
     FluNavigationView{
         id:nav_view
         anchors.fill: parent
         items: Sidebar
-        footerItems:Footer
+        footerItems: Footer
         z:11
-        displayMode:MainEvent.displayMode
+        displayMode: FluNavigationView.Auto
         logo: "/icons/favicon.ico"
-        title: qsTr("FluentUI")
-        autoSuggestBox: FluAutoSuggestBox{
+        title:"FluentUI"
+        autoSuggestBox:FluAutoSuggestBox{
             width: 280
             anchors.centerIn: parent
             iconSource: FluentIcons.Search
@@ -95,14 +94,13 @@ FluWindow {
                 }
         }
 
-
         Component.onCompleted: {
             Sidebar.navigationView = nav_view
             Footer.navigationView = nav_view
             nav_view.setCurrentIndex(0)
         }
 
-
     }
+
 
 }

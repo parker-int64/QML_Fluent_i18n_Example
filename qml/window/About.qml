@@ -6,7 +6,7 @@ import FluentUI
 FluWindow {
     id: window
     title: qsTr("About")
-    width: 300
+    width: 380
     height: 200
 
 
@@ -23,21 +23,23 @@ FluWindow {
             right: parent.right
         }
 
-        RowLayout {
+        ColumnLayout {
             Layout.topMargin: 20
             Layout.leftMargin: 15
             spacing: 14
 
-            FluText{
+            FluText {
                 text: qsTr("QML_FluentUI_i18n_example")
                 fontStyle: FluText.Title
             }
 
-            FluText{
+            FluText {
                 text: qsTr("Version: 0.1.0")
                 fontStyle: FluText.Body
                 Layout.alignment: Qt.AlignBottom
             }
+
+
         }
     }
 

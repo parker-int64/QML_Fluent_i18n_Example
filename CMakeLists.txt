@@ -10,9 +10,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick LinguistTools)
 
-
-message(STATUS "${CMAKE_CURRENT_SOURCE_DIR}")
-
 file(GLOB TS_FILES "${CMAKE_CURRENT_SOURCE_DIR}/translations/*.ts")
 file(GLOB IMAGE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/res/images/*")
 file(GLOB ICON_FILES "${CMAKE_CURRENT_SOURCE_DIR}/res/icons/*")
@@ -20,6 +17,7 @@ file(GLOB FONT_FILES "${CMAKE_CURRENT_SOURCE_DIR}/res/fonts/*")
 
 
 # !WARNING: Do not add ${CMAKE_CURRENT_SOURCE_DIR} in set function
+#           Use RELATIVE PATH instead
 set(QML_FILES   qml/App.qml
                 qml/window/MainWindow.qml
                 qml/window/About.qml
@@ -27,12 +25,28 @@ set(QML_FILES   qml/App.qml
                 qml/components/Sidebar.qml
                 qml/components/MainEvent.qml
                 qml/views/V_Home.qml
+                qml/views/V_Settings.qml
+                qml/views/V_Demo.qml
             )
 
+set(APP_SOURCES
 
-qt_add_executable(appFluentExample
-    src/main.cpp
+        src/main.cpp
 )
+qt_add_executable(appFluentExample
+    ${APP_SOURCES}
+)
+
+
+# Singleton type in QML must add properties
+# So the generated qmldir will add "singleton"
+set_source_files_properties(qml/components/Footer.qml
+                            qml/components/Sidebar.qml
+                            qml/components/MainEvent.qml
+                            PROPERTIES
+                            QT_QML_SINGLETON_TYPE TRUE
+)
+
 
 qt_add_qml_module(appFluentExample
     URI FluentExample
@@ -40,6 +54,7 @@ qt_add_qml_module(appFluentExample
     QML_FILES ${QML_FILES}
 
 )
+
 
 
 # compiled into the source file
@@ -52,7 +67,7 @@ qt_add_translations(appFluentExample
 qt_add_resources(appFluentExample "images"
                 PREFIX "/images"
                 BASE "res/images" # alias
-                FILES "res/images/bg_home_header.png")
+                FILES ${IMAGE_FILES})
 
 # fonts
 qt_add_resources(appFluentExample "fonts"
@@ -65,16 +80,7 @@ qt_add_resources(appFluentExample "icons"
                 BASE "res/icons"
                 FILES ${ICON_FILES})
 
-# QML Dir
-#qt_add_resources(appFluentExample "qmldir"
-#            PREFIX "/qmldir"
-#            FILES qml/components/qmldir)
-
 
 target_link_libraries(appFluentExample
                      PRIVATE Qt6::Quick
 )
-
-
-
-
