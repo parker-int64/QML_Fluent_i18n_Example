@@ -4,7 +4,10 @@ import QtQuick.Window
 import QtQuick.Controls
 import FluentUI
 import FluentExample
+<<<<<<< HEAD
 import QtMultimedia
+=======
+>>>>>>> 642c2bd (Fixed some logics)
 
 FluScrollablePage{
 
@@ -37,12 +40,20 @@ FluScrollablePage{
             anchors.top: text1.bottom
             selectByMouse: false
             anchors.horizontalCenter: parent.horizontalCenter
+<<<<<<< HEAD
             text: qsTr( "Obi-Wan : You were the chosen one! \n\tIt was said that you would destroy the Sith, not join them!\n\t Bring balance to the force... not leave it in darkness!\n\t" +
+=======
+            text: qsTr( "Obi-Wan : You were the chosen one! \n\tIt was said that you would destroy the Sith, not join them!\n\t Bring balance to the force... not leave it in darkness!\n" +
+>>>>>>> 642c2bd (Fixed some logics)
                         "Anakin Skywalker : I hate you!!!\n" +
                         "Obi-Wan : You were my brother Anakin! I loved you")
             font.italic: true;
             font.pixelSize: 18
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 642c2bd (Fixed some logics)
     }
 }

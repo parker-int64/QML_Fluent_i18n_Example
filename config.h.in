@@ -1,0 +1,10 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define VERSION_MAJOR @FluentExample_VERSION_MAJOR@
+#define VERSION_MINOR @FluentExample_VERSION_MINOR@
+#define VERSION_PATCH @FluentExample_VERSION_PATCH@
+
+// You can also add some macros or features 
+// and replace them with `configure_file()` in CMakeLists.txt
+#endif // CONFIG_H

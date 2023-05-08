@@ -1,8 +1,14 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+<<<<<<< HEAD
 #include <QTranslator>
 
 #include <QDir>
+=======
+#include <QQmlContext>
+#include "appInfo.h"
+#include "localization.h"
+>>>>>>> 642c2bd (Fixed some logics)
 
 
 int main(int argc, char *argv[])
@@ -18,6 +24,7 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+<<<<<<< HEAD
     QTranslator translator;
 
 
@@ -31,6 +38,31 @@ int main(int argc, char *argv[])
     QCoreApplication::installTranslator(&translator);
 
 
+=======
+    qmlRegisterType<AppInfo>("AppInfo", 1, 0, "AppInfo");
+
+    // qmlRegisterType<Localization>("Localization", 1, 0, "Localization"); // Q: It can be destoryed in child page??
+
+
+    Localization localization(nullptr, &engine);
+
+    // system perferred language
+
+
+//    QTranslator translator;
+
+//    // system perferred language
+//    if ( !translator.load(QLocale("zh_CN"), QLatin1String("lang"), QLatin1String("_"), QLatin1String(":/i18n")) ){
+
+
+//        qDebug() << "[ERROR] Error load translations..." << Qt::endl;
+//    }
+
+//    QCoreApplication::installTranslator(&translator);
+
+    engine.rootContext()->setContextProperty("localization", &localization);
+
+>>>>>>> 642c2bd (Fixed some logics)
 
     const QUrl url(u"qrc:/FluentExample/qml/App.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

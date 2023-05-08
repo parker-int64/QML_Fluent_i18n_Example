@@ -113,6 +113,11 @@ FluScrollablePage{
     }
 
     FluArea{
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 642c2bd (Fixed some logics)
         Layout.fillWidth: true
         Layout.topMargin: 20
         height: 80
@@ -133,15 +138,25 @@ FluScrollablePage{
 
             FluDropDownButton {
                 id: langSelect
+<<<<<<< HEAD
                 width: 200
                 height: 50
                 text: qsTr("Languages")
                 // text: lang.getCurrentLocale()
+=======
+                width: 300
+                height: 75
+                text: qsTr("Languages")
+>>>>>>> 642c2bd (Fixed some logics)
                 items:[
                     FluMenuItem{
                         text: "简体中文"
                         onClicked: {
                             console.log("zh_CN")
+<<<<<<< HEAD
+=======
+                            localization.changeDisplayLanguage("zh_CN")
+>>>>>>> 642c2bd (Fixed some logics)
                             langSelect.text = "简体中文"
                         }
                     },
@@ -150,11 +165,16 @@ FluScrollablePage{
                         text:"English"
                         onClicked: {
                             console.log("en_US")
+<<<<<<< HEAD
+=======
+                            localization.changeDisplayLanguage("en_US")
+>>>>>>> 642c2bd (Fixed some logics)
                             langSelect.text = "English"
                         }
                     }
                 ]
             }
+<<<<<<< HEAD
 
 //            Component.onCompleted: {
 //                switch (Qt.locale().name.substring(0,2)) {
@@ -168,6 +188,8 @@ FluScrollablePage{
 //                        languageIcon = "../images/language-icon_default.png";
 //                }
 //            }
+=======
+>>>>>>> 642c2bd (Fixed some logics)
         }
     }
 

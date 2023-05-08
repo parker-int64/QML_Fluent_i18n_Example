@@ -17,5 +17,11 @@ Window {
         }
         FluApp.initialRoute = "/"
         FluApp.run()
+<<<<<<< HEAD
+=======
+
+        localization.getSysLocaleInfo()
+        localization.loadDisplayLanguage() // load default language: en_US
+>>>>>>> 642c2bd (Fixed some logics)
     }
 }
