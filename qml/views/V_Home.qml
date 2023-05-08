@@ -11,14 +11,13 @@ FluScrollablePage{
     rightPadding:0
     bottomPadding:20
 
-<<<<<<< HEAD
-=======
+
 
     // Bug: When load translations in listElement
     // it may not translate the text
 
     // when you reload the translation file, it translated.
->>>>>>> 642c2bd (Fixed some logics)
+
     ListModel{
         id:model_header
         ListElement{
