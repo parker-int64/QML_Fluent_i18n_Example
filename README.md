@@ -12,13 +12,14 @@ Tested on:
 |CMake | >= 3.16||
 |Windows|10|22H2||
 |Ubuntu|2004|||
+|FluentUI|1.2.9|check here:[FluentUI](https://github.com/zhuzichu520/FluentUI)||
 
 
 # Implementation
 
 Based on Documentation on Qt:
 
-[Tutorial]()
+[Tutorial](tutorial/Tutorial.md)
 
 [简体中文](tutorial/Tutorial_zh_CN.md)
 
